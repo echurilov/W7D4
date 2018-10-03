@@ -4,6 +4,8 @@ end
 
 json.items do
   @pokemon.items.each do |item|
-    json.partial! 'api/pokemon/items', item: item, id: item.id
+    json.set! item.id do
+      json.extract! item, :id, :name, :pokemon_id, :price, :happiness, :image_url
+    end
   end
 end
