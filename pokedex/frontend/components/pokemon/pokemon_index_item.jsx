@@ -1,11 +1,24 @@
-import React from 'react';
+import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
-export const PokemonIndexItem = (poke) => {
-return (
-  <li key={poke.id}>
-    {poke.pk.name}
-    <br/>
-    <img src={poke.pk.image_url}></img>
-  </li>
-  );
-};
+export default class PokemonIndexItem extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {}
+
+  render() {
+    const {pokemon} = this.props;
+    console.log(this.props);
+    return (
+      <li key={pokemon.id}>
+          <Link to={`/pokemon/${pokemon.id}`}>
+            {pokemon.name}
+
+            <img src={pokemon.image_url}/>
+          </Link>
+      </li>
+      );
+  }
+}
