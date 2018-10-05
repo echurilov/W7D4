@@ -6,6 +6,7 @@ const pokemonReducer = (state = {}, action) => {
     case RECEIVE_ALL_POKEMON:
       return action.pokemon;
     case RECEIVE_POKEMON:
+    // debugger;
       return action.pokemon;
     default:
       return state;

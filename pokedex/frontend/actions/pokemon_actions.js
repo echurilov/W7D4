@@ -20,7 +20,7 @@ export const requestAllPokemon = () => (dispatch) => (
 );
 
 export const requestPokemon = (id) => (dispatch) => {
-  debugger;
+  // debugger;
   return (
   APIUtil.fetchPokemon(id)
     .then(pokemon => dispatch(receivePokemon(pokemon)))
